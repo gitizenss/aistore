@@ -1,0 +1,50 @@
+{
+  "name": "My Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": [
+    "--privileged",
+    "--cap-add=SYS_ADMIN",
+    "--cap-add=SYS_PTRACE",
+    "--cap-add=NET_ADMIN",
+    "--cap-add=NET_RAW",
+    "--device=/dev/net/tun",
+    "--device=/dev/fuse",
+    "--device=/dev/kvm",
+    "--device=/dev/vhost-net",
+    "--device=/dev/vhost-vsock",
+    "--device=/dev/loop-control:/dev/loop-control",
+    "--device=/dev/loop0:/dev/loop0",
+    "--device=/dev/loop1:/dev/loop1",
+    "--device=/dev/loop2:/dev/loop2",
+    "--device=/dev/loop3:/dev/loop3",
+    "--ipc=host",
+    "--network=host",
+    "-v", "/var/run/docker.sock:/var/run/docker.sock",
+    "-v", "/root/@admins:/root/@admins",
+    "--security-opt=seccomp=unconfined"
+  ],
+  "mounts": [
+    "source=/dev/loop-control,target=/dev/loop-control,type=bind",
+    "source=/dev/loop0,target=/dev/loop0,type=bind"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "dockerDashComposeVersion": "v2"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "oven.bun-vscode"
+      ],
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      }
+    }
+  },
+  "privileged": true,
+  "overrideCommand": false,
+  "postCreateCommand": "apt-get update && apt-get install -y ceph ceph-common ceph-mds ceph-mgr ceph-mon ceph-osd ceph-radosgw"
+}

@@ -1,0 +1,38 @@
+{
+	"folders": [
+		{
+			"name": "📡 @admins",
+			"path": ".."
+		}
+	],
+	
+	"settings": {
+		"editor.fontFamily": "'RecMonoCasual Nerd Font Propo'",
+		"terminal.integrated.fontFamily": "'SauceCodePro NF'",
+		"workbench.colorTheme": "One Nord",
+		"deno.enable": true,
+		"workbench.editorAssociations": {
+			"*.md": "markdownEditor.customEditor"
+		},
+		"folder-customization.folders": [
+			{
+				"path": "/workspaces/Downloads/epic/Vault/Notebook/",
+				"badge": "📖"
+			},
+			{
+				"path": "/workspaces/Downloads/epic/.vscode/",
+				"color": "foldercustomization.AnsiColor244"
+			},
+			{
+				"path": "/workspaces/Downloads/epic/.devcontainer/",
+				"color": "foldercustomization.AnsiColor8"
+			},
+			{
+				"path": "/workspaces/Downloads/epic/.archive/",
+				"color": "foldercustomization.AnsiColor8"
+			}
+		],
+		"folder-customization.colorChangedFolders": true,
+		"terminal.integrated.customGlyphs": true
+	}
+}

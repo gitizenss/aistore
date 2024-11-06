@@ -30,3 +30,5 @@ RUN git clone --depth=1 https://github.com/NVIDIA/ais-k8s.git && cd ais-k8s/oper
       go mod download && \
       make kustomize controller-gen envtest golangci-lint && \
       cd ../.. && rm -rf ais-k8s
+
+      
